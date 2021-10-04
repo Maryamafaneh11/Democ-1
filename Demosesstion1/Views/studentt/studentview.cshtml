@@ -1,0 +1,79 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>studentview</title>
+    <script src="~/lib/jquery/dist/jquery.js"></script>
+    <script>
+        $(document).ready(function () {
+           
+            $("#selector").change(function () {
+                debugger;
+                if ($(this).val() == 1) {
+                    $(".Hours").hide();
+                }
+                else {
+                    $(".Hours").show();
+                }
+              
+            })
+        })
+
+    </script>
+</head>
+<body>
+    <from action="Index" method="post">
+        <div>
+            <label>ID</label>
+            <input type="text" name="textid" />
+            <br />
+
+            <label>Name</label>
+            <input type="text" name="textname" />
+            <br />
+
+            <label>Bday</label>
+            <input type="text" name="textbday" />
+            <br />
+
+            <label>Type</label>
+            <select id="selector" name="option">
+                <option value="1">School</option>
+                <option value="2">University</option>
+            </select>
+            <br />
+
+            <label>Mark1</label>
+            <input type="text" name="textMark1" />
+            <br />
+            
+            <div class="Hours">
+                <label>Hours1</label>
+                <input type="text" name="textHours1" />
+                <br />
+            </div>
+
+            <label>Mark2</label>
+            <input type="text" name="textHours1" />
+            <br />
+
+            <div class="Hours">
+                <label>Hours2</label>
+                <input type="text" name="textHours2" />
+                <br />
+            </div>
+
+            <input type="submit"  value="save" name="save"/>
+        </div>
+        <div>
+            <span>@ViewData["messege"]</span>
+        </div>
+    </from>
+</body>
+</html>
